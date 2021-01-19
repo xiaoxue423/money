@@ -1,6 +1,8 @@
 <template>
-  <div class="nav-wrapper">
-    Money.vue
+  <div>
+    <layout>
+      <p>Money.vue</p>
+    </layout>
   </div>
 </template>
 
@@ -12,7 +14,5 @@
 </script>
 
 <style lang="scss" scoped>
-  .nav-wrapper {
-    border: 1px solid red;
-  }
+
 </style>
