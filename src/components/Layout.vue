@@ -20,10 +20,9 @@ name: "Layout"
   flex-direction: column;
   height: 100vh;
 }
+
 .content {
-  background: yellow;
   overflow: auto;
   flex-grow: 1;
 }
-
 </style>
