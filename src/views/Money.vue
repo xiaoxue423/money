@@ -1,9 +1,9 @@
 <template>
     <layout class-prefix="layout">
-      <NumberPad />
-      <Types xxx="hi"/>
-      <Notes />
       <Tags />
+      <Notes />
+      <Types :xxx="333"/>
+      <NumberPad />
     </layout>
 </template>
 

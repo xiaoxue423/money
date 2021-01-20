@@ -11,17 +11,23 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import {Component} from "vue-property-decorator";
+import {Component,Prop} from "vue-property-decorator";
 
-@Component({
-  props:{
-    propMessage: String
-  }
-})
+//1、自动提示更智能
+//2、你不能随便写 .toString()
+//3、编译报错 无法变成JS 严谨
+@Component
 export default class Types extends Vue {
   type = '-' // '-'表示支出    '+'表示收入
-  helloMsg = 'Hello, ' + this.propMessage;
+  // type: string = 'hi'
 
+  //Number  告诉  Vue   xxx  是个   运行时   Number
+  //Prop 告诉 Vue   xxx不是个data是prop
+  //number | undefined   告诉  xxx 的   编译时   类型
+  //Vue不支持小写的number
+  @Prop(Number) xxx: number | undefined
+
+  //必须要告诉函数的参数
   selectType(type: string){ // type 只能是 '-' 和 '+' 中的一个
     if(type !== '-' && type !== '+'){
       throw new Error
@@ -29,6 +35,16 @@ export default class Types extends Vue {
     this.type = type
   }
 
+  mounted(){
+    console.log('jack')
+    console.log(this.xxx)
+    //只有判断类型了才能通过
+    if(this.xxx === undefined){
+      console.log('没有xxx')
+    }else {
+      // console.log(this.xxx.yyy)
+    }
+  }
 }
 
   // export default {
