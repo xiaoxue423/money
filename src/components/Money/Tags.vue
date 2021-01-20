@@ -1,7 +1,7 @@
 <template>
   <div class="tags">
     <div class="new">
-      <button>新增标签</button>
+      <button @click="create">新增标签</button>
     </div>
     <ul class="current">
 <!--      <li v-for="(tag) in dataSource" :key="tag"-->
@@ -25,7 +25,7 @@
   @Component
   export default class Tags extends Vue{
     //这是一个字符串数组
-    @Prop(Array)  dataSource: string[] | undefined;
+    @Prop(Array) readonly dataSource: string[] | undefined;
     selectedTags: string[] = []
 
     select(tag: string){
@@ -36,10 +36,25 @@
         this.selectedTags.push(tag)
       }
     }
+
+    create(){
+      const name =   window.prompt('请输入标签名')
+      console.log(name)
+      if(name === ''){
+        window.alert('标签名不能为空')
+      }else if(this.dataSource){
+          // this.dataSource.push(name as string)
+          // this.dataSource.push(name!)
+          this.$emit('update:dataSource',
+              [...this.dataSource,name])
+        }
+      }
   }
 </script>
 
 <style lang="scss" scoped>
+@import "~@/assets/style/helper.scss";
+
 .tags {
   font-size: 14px;
   padding: 16px;

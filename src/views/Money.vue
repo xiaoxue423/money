@@ -1,8 +1,8 @@
 <template>
     <layout class-prefix="layout">
-      <Tags :data-source="tags"/>
+      <Tags :data-source.sync="tags"/>
       <Notes />
-      <Types :xxx="333"/>
+      <Types />
       <NumberPad />
     </layout>
 </template>
@@ -15,17 +15,19 @@
 
   export default {
     name: "Money",
-    components: {Tags, Notes, NumberPad,Types},
+    components: { NumberPad,Notes,Types,Tags},
     data(){
-      ['衣','食','住','行']
+      return {
+        tags: ['衣','食','住','行']
+      }
     }
   }
 </script>
 
 <style lang="scss">
-.layout-content {
-  display: flex;
-  flex-direction: column-reverse;
-}
+//.layout-content {
+//  display: flex;
+//  flex-direction: column-reverse;
+//}
 </style>
 
