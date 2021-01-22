@@ -43,16 +43,16 @@ export default class Types extends Vue {
   //   this.$emit('update:value',value)
   // }
 
-  mounted(){
-    console.log('jack')
-    console.log(this.xxx)
-    //只有判断类型了才能通过
-    if(this.xxx === undefined){
-      console.log('没有xxx')
-    }else {
-      // console.log(this.xxx.yyy)
-    }
-  }
+  // mounted(){
+  //   console.log('jack')
+  //   console.log(this.xxx)
+  //   //只有判断类型了才能通过
+  //   if(this.xxx === undefined){
+  //     console.log('没有xxx')
+  //   }else {
+  //     // console.log(this.xxx.yyy)
+  //   }
+  // }
 
 }
 
