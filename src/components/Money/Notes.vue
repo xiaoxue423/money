@@ -11,17 +11,24 @@
       <input type="text"
              v-model="value"
              placeholder="在这里输入备注">
+      <!--             @input="$emit('update:value',$event.target.value)"-->
     </label>
   </div>
 </template>
 
 <script lang="ts">
   import Vue from 'vue'
-  import {Component} from 'vue-property-decorator';
+  import {Component,Watch} from 'vue-property-decorator';
+
 
   @Component
   export default class Notes extends Vue{
     value = '';
+
+    @Watch('value')
+      onValueChanged(value: string){
+        this.$emit('update:value',value);
+      }
   }
 </script>
 
