@@ -10,6 +10,6 @@ type RecordItem = {
     tags: string[];
     notes: string;
     type: string;
-    amount: number;  //除了数据类型
-    createdAt: Date;  //类  /   构造函数
+    amount: number; //数据类型
+    createdAt?: Date; //类 构造函数  ?表示这个字段可以没有
 }
