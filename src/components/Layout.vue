@@ -1,7 +1,9 @@
 <template>
   <div class="layout-wrapper" :class="classPrefix && `${classPrefix}-wrapper`">
     <div class="content" :class="classPrefix && `${classPrefix}-content`">
+
      <slot />
+
     </div>
     <Nav />
   </div>
@@ -23,6 +25,7 @@ export default {
 }
 
 .content {
+  border:1px solid blue;
   overflow: auto;
   flex-grow: 1;
 }

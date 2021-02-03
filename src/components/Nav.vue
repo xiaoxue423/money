@@ -29,7 +29,9 @@ nav {
   @extend %outerShadow;
   display: flex;
   flex-direction: row;
+  box-shadow: 0 0 3px rgba(0,0,0,0.3);
   font-size: 12px;
+
   > .item {
     padding: 2px 0;
     width: 33.33333%;
@@ -42,6 +44,7 @@ nav {
       height: 32px;
     }
   }
+
   > .item.selected{
     color: $color-highlight;
   }
